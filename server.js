@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
 const app = express();
@@ -88,7 +90,16 @@ MANDATORY RESPONSE FORMAT — Return ONLY valid JSON, no markdown, no backticks:
   }
 });
 
-const PORT = process.env.API_PORT || 3001;
+// Serve frontend static files in production
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Fallback for React Router (SPA)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || process.env.API_PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`✅ BizIQ Gemini proxy running on http://localhost:${PORT}`);
+  console.log(`✅ BizIQ server running on port ${PORT}`);
 });

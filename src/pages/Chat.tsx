@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Bot, User, Send, ChevronRight, BarChart2, Check, Download, Code2, Database, Zap } from 'lucide-react';
+import { Bot, User, Send, ChevronRight, BarChart2, Check, Download, Code2, Database } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useData } from '../contexts/DataContext';
 import { analyzeBusinessData } from '../lib/openai';
@@ -17,6 +17,7 @@ type Message = {
   tableData?: any[];
   sql?: string;
   suggestions?: string[];
+  isMock?: boolean;
 };
 
 export default function Chat() {

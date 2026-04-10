@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AlertCircle, TrendingUp, CheckCircle, Clock, MessageSquare, FileBarChart, Sparkles, ArrowRight, Download } from 'lucide-react';
+import { AlertCircle, CheckCircle, Clock, MessageSquare, FileBarChart, Sparkles, ArrowRight, Download } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useData } from '../contexts/DataContext';

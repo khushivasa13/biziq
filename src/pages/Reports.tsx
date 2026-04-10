@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react';
-import { FileBarChart, Download, Share2, FileSpreadsheet, Wand2, TrendingUp, Users, Target, DollarSign } from 'lucide-react';
+import { useState } from 'react';
+import { Download, Share2, FileSpreadsheet, Wand2, TrendingUp, Users, Target, DollarSign } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useData } from '../contexts/DataContext';
 import { analyzeBusinessData } from '../lib/openai';
@@ -7,7 +7,7 @@ import { getMockResponse } from '../lib/mockData';
 import { cn } from '../lib/utils';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line, CartesianGrid, Legend
+  PieChart, Pie, Cell, Legend
 } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePDF } from 'react-to-pdf';

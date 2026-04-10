@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Database, MessageSquare, Bell, FileBarChart, PieChart, Shield, ArrowRight, Download, Sparkles } from 'lucide-react';
+import { Database, MessageSquare, Bell, FileBarChart, PieChart, Shield, Download, Sparkles } from 'lucide-react';
 import { cn } from '../lib/utils';
 import ShaderBackground from '../components/ui/shader-background';
 import { usePDF } from 'react-to-pdf';
